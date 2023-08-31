@@ -9,9 +9,7 @@ window.addEventListener('load', function() {
 	});
 });
 
-window.addEventListener('load', function() {
-    window.open('https://cuevana3.mu/pelicula/avatar-the-way-of-water-2022-8/', '_blank');
-});
+
 
 
 

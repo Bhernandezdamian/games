@@ -1,17 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Game Snacks</title>
-	<link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Snacks</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        
+        #banner-container {
+            position: fixed;
+            bottom: -100px; /* Modifica este valor para mover el banner más abajo */
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #f0f0f0; /* Cambia el color de fondo según tus preferencias */
+            padding: 10px 0; /* Agrega espacio alrededor del banner */
+        }
+        
+        iframe {
+            border: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: calc(100% - 60px); /* Resta el alto del banner */
+        }
+    </style>
 </head>
 <body>
-	<iframe src="https://gamesnacks.com/" frameborder="0"></iframe>
+    <iframe src="https://gamesnacks.com/" frameborder="0"></iframe>
 
+    <div id="banner-container">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'd4c079f70bb6aafa8ad3b1df61816b59',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitablecreativeformat.com/d4c079f70bb6aafa8ad3b1df61816b59/invoke.js"></scr' + 'ipt>');
+        </script>
+    </div>
 
+    <script>
+        window.addEventListener('load', function() {
+            // Get the iframe element
+            var iframe = document.querySelector('iframe');
 
-
-
-	<script src="script.js"></script>
+            // Resize the iframe when the window is resized
+            window.addEventListener('resize', function() {
+                // Set the height of the iframe to match the height of its content
+                iframe.style.height = `calc(100% - ${document.getElementById('banner-container').offsetHeight}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
